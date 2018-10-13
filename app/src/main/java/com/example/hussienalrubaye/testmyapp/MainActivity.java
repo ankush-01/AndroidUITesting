@@ -17,7 +17,12 @@ int Attemp=0;
     public void Login(View view) {
         EditText UserName=(EditText)findViewById(R.id.etUserName);
         EditText Password=(EditText)findViewById(R.id.etPassword);
-        Attemp++; //number of attemps
+          if(UserName.getText().toString().equals("")||Password.getText().toString().equals("")){
+          Toast.makeText(getApplicationContext(),"Enter you username and password too",Toast.LENGTH_LONG).show();
+        }
+        else Attemp++;  //number of attemps
+        
+
         if (Attemp>=3){
             Toast.makeText(getApplicationContext(),"to many try",Toast.LENGTH_LONG).show();
             return;
